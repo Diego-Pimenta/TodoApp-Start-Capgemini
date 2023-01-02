@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package controller;
 
 import java.sql.Connection;
@@ -14,10 +10,6 @@ import java.util.List;
 import model.Project;   
 import util.ConnectionFactory;
 
-/**
- *
- * @author dois0
- */
 public class ProjectController {
     
     public void save(Project project) {
@@ -55,7 +47,7 @@ public class ProjectController {
     public void update(Project project){
         
         String sql = "UPDATE projects SET name = ?, description = ?,"
-                + "createdAt = ?, updateAt = ? WHERE id = ?";
+                + "createdAt = ?, updatedAt = ? WHERE id = ?";
         
         Connection conn = null;
         PreparedStatement statement = null;
@@ -134,6 +126,5 @@ public class ProjectController {
         } finally {
             ConnectionFactory.closeConnection(conn, statement);
         }
-    }
-    
+    }   
 }

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package controller;
 
 import java.sql.Connection;
@@ -13,17 +9,13 @@ import java.util.List;
 import model.Task;
 import util.ConnectionFactory;
 
-/**
- *
- * @author dois0
- */
 public class TaskController {
     
     public void save(Task task) {
         
         // comando mysql
         String sql = "INSERT INTO tasks (idProject, name, description, completed,notes,"
-                + "deadline, createdAt, updateAt) values (?, ?, ?, ?, ?, ?, ?, ?)";
+                + "deadline, createdAt, updatedAt) values (?, ?, ?, ?, ?, ?, ?, ?)";
         
         Connection conn = null;
         PreparedStatement statement = null;
@@ -59,7 +51,7 @@ public class TaskController {
     public void update(Task task){
         
         String sql = "UPDATE tasks SET idProject = ?, name = ?, description = ?, completed = ?"
-                + ",notes = ?, deadline = ?, createdAt = ?, updateAt = ? WHERE id = ?";
+                + ",notes = ?, deadline = ?, createdAt = ?, updatedAt = ? WHERE id = ?";
         
         Connection conn = null;
         PreparedStatement statement = null;
@@ -108,7 +100,7 @@ public class TaskController {
     }
     
     public List<Task> getAll(int idProject){
-        String sql = "SELECT * FROM taks WHERE idProject = ?";
+        String sql = "SELECT * FROM tasks WHERE idProject = ?";
         
         Connection conn = null;
         PreparedStatement statement = null;
@@ -152,6 +144,5 @@ public class TaskController {
         
         // retorna a lista de tarefas que foi criada e carregada do banco de dados
         return tasks;
-    }
-    
+    }   
 }

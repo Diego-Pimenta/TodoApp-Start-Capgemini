@@ -1,15 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model;
 
 import java.util.Date;
 
-/**
- *
- * @author dois0
- */
 public class Task {
     
     private int id;
@@ -35,7 +27,8 @@ public class Task {
     }
     
     public Task() {
-        
+    	this.createdAt = new Date();
+        this.updatedAt = new Date();
     }
 
     public int getId() {
@@ -121,6 +114,5 @@ public class Task {
                 ", deadline=" + deadline +
                 ", createdAt=" + createdAt +
                 ", updatedAt=" + updatedAt + '}';
-    }
-    
+    }   
 }
